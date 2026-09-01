@@ -35,3 +35,24 @@ Make sure you have Node.js installed on your system.
 1. Clone the repository:
    ```bash
    git clone [https://github.com/your-username/agdum-studio.git](https://github.com/your-username/agdum-studio.git)
+
+   Navigate to the project directory:
+
+Bash
+cd agdum-studio
+Install dependencies:
+
+Bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+Run the development server:
+
+Bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
