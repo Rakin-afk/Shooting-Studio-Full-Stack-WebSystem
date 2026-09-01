@@ -11,33 +11,33 @@ export default function Home() {
   const [subCards, setSubCards] = useState<any[]>([]);
 
   useEffect(() => {
-    // Load Main Services
-    const savedServices = localStorage.getItem("admin_main_services");
-    if (savedServices) {
-      const parsed = JSON.parse(savedServices);
-      setMainServices(parsed);
-      if (parsed.length > 0) {
-        setActiveCategory(parsed[0].title);
+    // শুধুমাত্র ব্রাউজার সাইডে localStorage চেক করা নিশ্চিত করা হলো
+    if (typeof window !== "undefined") {
+      const savedServices = localStorage.getItem("admin_main_services");
+      if (savedServices) {
+        const parsed = JSON.parse(savedServices);
+        setMainServices(parsed);
+        if (parsed.length > 0) {
+          setActiveCategory(parsed[0].title);
+        }
+      } else {
+        const initial = [
+          { id: "1", title: "PERSONAL", badge: "" },
+          { id: "2", title: "OFFICIAL", badge: "" },
+          { id: "3", title: "SSHOOTING", badge: "" },
+        ];
+        setMainServices(initial);
+        setActiveCategory("PERSONAL");
+        localStorage.setItem("admin_main_services", JSON.stringify(initial));
       }
-    } else {
-      const initial = [
-        { id: "1", title: "PERSONAL", badge: "" },
-        { id: "2", title: "OFFICIAL", badge: "" },
-        { id: "3", title: "SSHOOTING", badge: "" },
-      ];
-      setMainServices(initial);
-      setActiveCategory("PERSONAL");
-      localStorage.setItem("admin_main_services", JSON.stringify(initial));
-    }
 
-    // Load Sub-Cards
-    const savedSubCards = localStorage.getItem("admin_sub_cards");
-    if (savedSubCards) {
-      setSubCards(JSON.parse(savedSubCards));
+      const savedSubCards = localStorage.getItem("admin_sub_cards");
+      if (savedSubCards) {
+        setSubCards(JSON.parse(savedSubCards));
+      }
     }
   }, []);
 
-  // Filter sub-cards based on selected main service category
   const filteredSubCards = subCards.filter(
     (card) => card.category?.toLowerCase() === activeCategory?.toLowerCase()
   );
@@ -50,23 +50,18 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#fcfdff] text-slate-800 font-sans p-6 md:p-10 relative">
-      
-      {/* Top Header: Admin Button Removed Here */}
       <div className="max-w-7xl mx-auto flex justify-between items-center mb-10">
         <h1 className="text-xl md:text-2xl font-black tracking-tight text-slate-900 uppercase">
           AGDUM STUDIO
         </h1>
       </div>
 
-      {/* Main Container Card */}
       <div className="max-w-4xl mx-auto bg-white border border-slate-100 rounded-3xl p-6 md:p-10 shadow-xl shadow-slate-100/85 space-y-8">
-        
         <div className="text-center space-y-4">
           <h2 className="text-xl md:text-2xl font-black tracking-tight text-slate-900 uppercase">
             SERVICE PLANS
           </h2>
 
-          {/* Dynamic Main Services Tabs/Buttons */}
           <div className="flex flex-wrap justify-center gap-2">
             {mainServices.map((service) => {
               const isActive = activeCategory.toLowerCase() === service.title.toLowerCase();
@@ -87,7 +82,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Sub-Cards List Area */}
         <div className="space-y-4 bg-slate-50/50 border border-slate-100 rounded-2xl p-6 min-h-[220px]">
           {filteredSubCards.length === 0 ? (
             <div className="text-center py-12 space-y-1">
@@ -106,7 +100,6 @@ export default function Home() {
           )}
         </div>
 
-        {/* Explore Button */}
         <div className="flex justify-center pt-2">
           <button
             onClick={handleExplore}
@@ -115,9 +108,7 @@ export default function Home() {
             Explore the Feature →
           </button>
         </div>
-
       </div>
-
     </div>
   );
 }
