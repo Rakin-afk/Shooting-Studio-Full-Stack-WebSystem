@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+#  Agdum Studio
 
-## Getting Started
+A modern, full-stack studio service booking and package management web application built with **Next.js**, **TypeScript**, and **Tailwind CSS**. Designed to seamlessly handle service categories, dynamic package exploration, custom interactive bookings, and client-side administrative state management.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+##  Key Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Dynamic Service & Package Management:** Switch seamlessly between service categories (Personal, Official, Shooting, etc.) with real-time reactive UI.
+- **Interactive Explore Pages:** Visually rich package cards featuring gradient headers, feature checklists, and pricing.
+- **Booking Workflow:** Complete end-to-end booking selection logic storing preferences via local storage state flows.
+- **Role-Based UI Control:** Streamlined user-facing portal ensuring clear separation of client views and backend service configurations.
+- **Modern UI/UX:** Crafted with Tailwind CSS, custom card components, sleek modal layouts, and smooth transition effects.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+##  Tech Stack
 
-## Learn More
+- **Frontend & Backend:** Next.js (App Router), React, TypeScript
+- **Styling:** Tailwind CSS
+- **State & Storage:** React Hooks, LocalStorage Management
+- **Deployment:** Vercel
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+##  Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Follow these instructions to get a copy of the project up and running locally on your machine.
 
-## Deploy on Vercel
+### Prerequisites
+Make sure you have Node.js installed on your system.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Installation & Running
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/your-username/agdum-studio.git](https://github.com/your-username/agdum-studio.git)
