@@ -44,15 +44,15 @@ Install dependencies:
 
 Bash
 npm install
-# or
+ or
 yarn install
-# or
+ or
 pnpm install
 Run the development server:
 
 Bash
 npm run dev
-# or
+ or
 yarn dev
-# or
+ or
 pnpm dev
